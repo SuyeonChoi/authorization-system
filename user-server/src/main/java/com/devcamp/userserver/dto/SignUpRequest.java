@@ -24,20 +24,14 @@ public class SignUpRequest {
     @Size(max = 11)
     private String phoneNumber;
 
-    @NotEmpty
-    private short role;
-
-    @NotEmpty
-    private short activation;
-
     public User toEntity() {
         return User.builder()
                 .email(email)
                 .password(password)
                 .nickname(nickname)
                 .phoneNumber(phoneNumber)
-                .role(role)
-                .activation(activation)
+                .role((short) 0)
+                .activation((short) 1)
                 .build();
     }
 }

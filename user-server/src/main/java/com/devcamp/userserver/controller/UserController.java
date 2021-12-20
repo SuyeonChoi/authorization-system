@@ -22,7 +22,7 @@ public class UserController {
     @PostMapping("/sign-up")
     public ResponseEntity<Void> signup(@RequestBody @Valid SignUpRequest request) {
         long id = userService.create(request);
-        log.info("[USER SIGN UP] : " + id);
+        log.info("[USER SIGN UP] " + id);
         return ResponseEntity.ok().build();
     }
 }
