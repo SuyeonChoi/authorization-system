@@ -23,6 +23,8 @@ public class UserService {
         if (userRepository.existsByPhoneNumber(request.getPhoneNumber()))
             throw new EntityExistsException("이미 존재하는 전화번호입니다.");
 
+        // TODO: 비밀번호 암호화
+
         User user = request.toEntity();
         User savedUser = userRepository.save(user);
         return savedUser.getId();
