@@ -14,7 +14,7 @@ import javax.validation.constraints.NotNull;
 @Getter
 @NoArgsConstructor
 @Entity
-public class User extends BaseTimeEntity{
+public class User extends BaseTimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
@@ -37,13 +37,18 @@ public class User extends BaseTimeEntity{
     @NotNull
     private short activation;
 
+    @NotNull
+    private String salt;
+
     @Builder
-    public User(String email, String password, String nickname, String phoneNumber, short role, short activation) {
+    public User(String email, String password, String nickname, String phoneNumber,
+                short role, short activation, String salt) {
         this.email = email;
         this.password = password;
         this.nickname = nickname;
         this.phoneNumber = phoneNumber;
         this.role = role;
         this.activation = activation;
+        this.salt = salt;
     }
 }

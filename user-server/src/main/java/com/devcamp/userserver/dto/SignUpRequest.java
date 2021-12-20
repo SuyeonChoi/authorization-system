@@ -1,6 +1,7 @@
 package com.devcamp.userserver.dto;
 
 import com.devcamp.userserver.domain.User;
+import com.devcamp.userserver.utils.SHA256Util;
 import lombok.Getter;
 
 import javax.validation.constraints.NotEmpty;
@@ -25,13 +26,15 @@ public class SignUpRequest {
     private String phoneNumber;
 
     public User toEntity() {
+        String salt = SHA256Util.generateSalt();
         return User.builder()
                 .email(email)
-                .password(password)
+                .password(SHA256Util.getEncrypt(password, salt))
                 .nickname(nickname)
                 .phoneNumber(phoneNumber)
                 .role((short) 0)
                 .activation((short) 1)
+                .salt(salt)
                 .build();
     }
 }
