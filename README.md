@@ -1,5 +1,30 @@
 # authorization-system
 
+## 구현 기능
+* [X] 사용자 DB 설계
+* [X] 가입, 로그인 페이지
+* [X] 인증 서버 (API)
+* [X] RDBMS DB 사용 (MySQL, PostgreSQL)
+* [X] Password Encryption
+* [ ] 유저 관리 페이지 (Admin/BackOffice)
+* [ ] E-Mail 인증
+* [ ] 비밀번호 찾기
+* [ ] 캐시
+
+## DB 스키마
+![auth_db](https://user-images.githubusercontent.com/28749734/149275831-13019713-2f6b-4dbe-8c65-6259af49c1dd.PNG)
+
+## 결과 화면
+### 회원가입
+![signup](https://user-images.githubusercontent.com/28749734/149275656-6197979b-6e35-4967-b097-6b88f5bb1900.PNG)
+
+### 로그인
+![login](https://user-images.githubusercontent.com/28749734/149275643-67f5145a-03cd-4657-8e79-79b57b329d5f.PNG)
+
+### 로그아웃
+![logout](https://user-images.githubusercontent.com/28749734/149275641-aadab679-d9a1-4f60-8a9c-02e71dad0000.PNG)
+
+
 ## 🧾 기능 List
 - 회원가입
   - 회원은 이메일, 비밀번호, 비밀번호 확인, 닉네임, 전화번호 정보를 입력한다.
